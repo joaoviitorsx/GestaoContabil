@@ -1,0 +1,58 @@
+import type { Grupo } from "../types/tarefas/grupo";
+
+export const gruposMock: Grupo[] = [
+  {
+      id: "grp-1",
+      nome: "Empresas de Tecnologia",
+      descricao: "Grupo de empresas do setor de tecnologia e inovação",
+      cor: "#3b82f6",
+      dataCriacao: "2025-01-15",
+      totalEmpresas: 2,
+      totalTarefas: 77,
+  },
+  {
+      id: "grp-2",
+      nome: "Comércio Varejista",
+      descricao: "Empresas do setor de comércio e varejo",
+      cor: "#10b981",
+      dataCriacao: "2025-02-10",
+      totalEmpresas: 1,
+      totalTarefas: 28,
+  },
+  {
+      id: "grp-3",
+      nome: "Prestação de Serviços",
+      descricao: "Empresas prestadoras de serviços diversos",
+      cor: "#f59e0b",
+      dataCriacao: "2025-01-20",
+      totalEmpresas: 1,
+      totalTarefas: 38,
+  },
+  {
+      id: "grp-4",
+      nome: "Indústria",
+      descricao: "Empresas do setor industrial e manufatura",
+      cor: "#8b5cf6",
+      dataCriacao: "2025-03-05",
+      totalEmpresas: 0,
+      totalTarefas: 0,
+  },
+  {
+      id: "grp-5",
+      nome: "Saúde e Bem-Estar",
+      descricao: "Empresas da área de saúde, clínicas e consultórios",
+      cor: "#ec4899",
+      dataCriacao: "2025-02-28",
+      totalEmpresas: 0,
+      totalTarefas: 0,
+  },
+  {
+      id: "grp-6",
+      nome: "Educação",
+      descricao: "Instituições de ensino e cursos profissionalizantes",
+      cor: "#06b6d4",
+      dataCriacao: "2025-03-12",
+      totalEmpresas: 0,
+      totalTarefas: 0,
+  },
+];

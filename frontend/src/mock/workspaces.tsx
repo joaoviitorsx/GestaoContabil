@@ -1,11 +1,43 @@
-import type { Workspace } from "../types/workspace";
+import type { Workspace } from "../types/workspace/workspace";
 
 export const workspacesMock: Workspace[] = [
   {
     id: "1",
+    grupoId: "grp-1", // Grupo Tecnologia
     nomeFantasia: "Empresa ABC Ltda",
     razaoSocial: "ABC Comércio e Serviços Ltda",
     cnpj: "12.345.678/0001-90",
+    inscricaoEstadual: "123.456.789.123",
+    inscricaoMunicipal: "98765432",
+    grupo: "Grupo Tecnologia",
+    regimeTributario: "Lucro Presumido",
+    inicioContrato: "2023-01-15",
+    
+    // Situação: Ativa
+    situacao: "Ativa",
+    situacaoAtiva: {
+      procuracaoDET: "Válida até 31/12/2025",
+      apresentacao: "15/01/2023",
+      encerramentoInter: "N/A",
+    },
+
+    // Atribuição dos Setores
+    setorContabil: {
+      responsavel: "Maria Silva",
+      status: "Ativo",
+      classe: "A",
+    },
+    setorFiscal: {
+      responsavel: "Carlos Mendes",
+      status: "Ativo",
+      classe: "A",
+    },
+    setorDP: {
+      responsavel: "Ana Paula",
+      status: "Ativo",
+      classe: "B",
+    },
+
     setor: "Fiscal",
     icon: "🏢",
     color: "#2563eb",
@@ -53,15 +85,12 @@ export const workspacesMock: Workspace[] = [
         setor: "Fiscal",
         filial: "Matriz - São Paulo",
         responsible: {
+          id: "u1",
           name: "Carlos Mendes",
           role: "Analista Fiscal",
           avatar: "CM",
         },
         dueDate: "2025-04-10",
-        isLate: false,
-        attachments: 3,
-        comments: 2,
-        links: 1,
         createdAt: "2025-04-01",
         updatedAt: "2025-04-05",
         accessLinkIds: ["a1", "a2"],
@@ -75,15 +104,12 @@ export const workspacesMock: Workspace[] = [
         setor: "Fiscal",
         filial: "Matriz - São Paulo",
         responsible: {
+          id: "u2",
           name: "Ana Paula",
           role: "Coordenadora Fiscal",
           avatar: "AP",
         },
         dueDate: "2025-04-15",
-        isLate: false,
-        attachments: 5,
-        comments: 4,
-        links: 0,
         createdAt: "2025-04-02",
         updatedAt: "2025-04-08",
         accessLinkIds: ["a1"],
@@ -97,15 +123,12 @@ export const workspacesMock: Workspace[] = [
         setor: "Fiscal",
         filial: "Filial - Rio de Janeiro",
         responsible: {
+          id: "u3",
           name: "Roberto Lima",
           role: "Assistente Fiscal",
           avatar: "RL",
         },
         dueDate: "2025-04-05",
-        isLate: true,
-        attachments: 0,
-        comments: 1,
-        links: 2,
         createdAt: "2025-03-28",
         updatedAt: "2025-04-03",
         accessLinkIds: ["a1", "a3"],
@@ -199,9 +222,34 @@ export const workspacesMock: Workspace[] = [
   },
   {
     id: "2",
+    grupoId: "grp-1", // Grupo Tecnologia
     nomeFantasia: "TechSolutions Sistemas",
     razaoSocial: "TechSolutions Tecnologia em Sistemas Ltda",
     cnpj: "23.456.789/0001-12",
+    inscricaoEstadual: "234.567.891.234",
+    inscricaoMunicipal: "87654321",
+    grupo: "Grupo Tecnologia",
+    regimeTributario: "Simples Nacional",
+    inicioContrato: "2022-03-10",
+
+    // Situação: Em Rescisão
+    situacao: "Em Rescisão",
+    situacaoEmRescisao: {
+      statusRescisao: "Aguardando Documentação",
+      dataRescisao: "2025-03-01",
+      contratos: "Em processo de encerramento",
+      procuracao: "Cancelada em 01/03/2025",
+      det: "Pendente de baixa",
+      observacaoRescisao: "Cliente solicitou rescisão por mudança de contabilidade. Documentação em processamento.",
+    },
+
+    // Atribuição dos Setores (alguns podem estar inativos)
+    setorContabil: {
+      responsavel: "Pedro Santos",
+      status: "Em Implantação",
+      classe: "B",
+    },
+
     setor: "Contábil",
     icon: "💻",
     color: "#059669",
@@ -239,15 +287,12 @@ export const workspacesMock: Workspace[] = [
         setor: "Contábil",
         filial: "Matriz - São Paulo",
         responsible: {
+          id: "u4",
           name: "Juliana Costa",
           role: "Contadora",
           avatar: "JC",
         },
         dueDate: "2025-04-08",
-        isLate: false,
-        attachments: 2,
-        comments: 3,
-        links: 0,
         createdAt: "2025-04-01",
         updatedAt: "2025-04-07",
         accessLinkIds: [],
@@ -261,15 +306,12 @@ export const workspacesMock: Workspace[] = [
         setor: "Contábil",
         filial: "Matriz - São Paulo",
         responsible: {
+          id: "u5",
           name: "Fernando Souza",
           role: "Assistente Contábil",
           avatar: "FS",
         },
         dueDate: "2025-04-12",
-        isLate: false,
-        attachments: 1,
-        comments: 1,
-        links: 0,
         createdAt: "2025-04-03",
         updatedAt: "2025-04-06",
         accessLinkIds: ["a4"],
@@ -311,9 +353,27 @@ export const workspacesMock: Workspace[] = [
   },
   {
     id: "3",
+    grupoId: "grp-2", // Grupo Comércio
     nomeFantasia: "RH Talentos Consultoria",
     razaoSocial: "RH Talentos Consultoria em Recursos Humanos S/A",
     cnpj: "34.567.890/0001-34",
+    inscricaoEstadual: "345.678.912.345",
+    grupo: "Grupo Serviços",
+    regimeTributario: "Lucro Real",
+    inicioContrato: "2020-06-20",
+
+    // Situação: Baixada
+    situacao: "Baixada",
+    situacaoBaixada: {
+      statusFinal: "Baixa Concluída",
+      dataBaixa: "2024-12-15",
+      contratosEncerramento: "Todos encerrados",
+      procuracao: "Cancelada",
+      statusDBE: "Processado e Aprovado",
+    },
+
+    // Sem setores atribuídos pois empresa foi baixada
+
     setor: "DP",
     icon: "👥",
     color: "#9333ea",
@@ -361,15 +421,12 @@ export const workspacesMock: Workspace[] = [
         setor: "DP",
         filial: "Matriz - Rio de Janeiro",
         responsible: {
+          id: "u6",
           name: "Camila Rodrigues",
           role: "Analista de DP",
           avatar: "CR",
         },
         dueDate: "2025-04-05",
-        isLate: false,
-        attachments: 4,
-        comments: 2,
-        links: 1,
         createdAt: "2025-03-25",
         updatedAt: "2025-04-04",
         accessLinkIds: ["a5"],
@@ -383,15 +440,12 @@ export const workspacesMock: Workspace[] = [
         setor: "DP",
         filial: "Matriz - Rio de Janeiro",
         responsible: {
+          id: "u7",
           name: "Lucas Ferreira",
           role: "Coordenador de DP",
           avatar: "LF",
         },
         dueDate: "2025-04-15",
-        isLate: false,
-        attachments: 2,
-        comments: 5,
-        links: 2,
         createdAt: "2025-04-05",
         updatedAt: "2025-04-09",
         accessLinkIds: ["a5", "a6"],
@@ -441,6 +495,7 @@ export const workspacesMock: Workspace[] = [
   },
   {
     id: "4",
+    grupoId: "grp-3", // Grupo Serviços
     nomeFantasia: "FinanceGroup",
     razaoSocial: "FinanceGroup Investimentos e Consultoria Ltda",
     cnpj: "45.678.901/0001-56",
@@ -481,15 +536,12 @@ export const workspacesMock: Workspace[] = [
         setor: "Financeiro",
         filial: "Sede - São Paulo",
         responsible: {
+          id: "u8",
           name: "Patrícia Lima",
           role: "Analista Financeiro",
           avatar: "PL",
         },
         dueDate: "2025-04-11",
-        isLate: false,
-        attachments: 1,
-        comments: 0,
-        links: 1,
         createdAt: "2025-04-08",
         updatedAt: "2025-04-10",
         accessLinkIds: ["a7"],
@@ -503,15 +555,12 @@ export const workspacesMock: Workspace[] = [
         setor: "Financeiro",
         filial: "Sede - São Paulo",
         responsible: {
+          id: "u9",
           name: "Gustavo Santos",
           role: "Assistente Financeiro",
           avatar: "GS",
         },
         dueDate: "2025-04-14",
-        isLate: false,
-        attachments: 0,
-        comments: 1,
-        links: 0,
         createdAt: "2025-04-07",
         updatedAt: "2025-04-07",
         accessLinkIds: ["a7", "a8"],
