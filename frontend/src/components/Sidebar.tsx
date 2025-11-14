@@ -5,7 +5,7 @@ import icone from "../assets/icone.png";
 
 const menuItems: { icon: React.ElementType; label: string; key: string; path: string }[] = [
   { icon: LayoutDashboard, label: "Dashboard", key: "dashboard", path: "/dashboard" },
-  { icon: Zap, label: "Tarefas", key: "modulos", path: "/workspaces" },
+  { icon: Zap, label: "Tarefas", key: "modulos", path: "/tarefas" },
   { icon: Building2 , label: "Empresas", key: "empresas", path: "/empresas" },
   { icon: ShieldUser, label: "Admin", key: "administracao", path: "/administracao" },
 ];
